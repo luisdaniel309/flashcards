@@ -3,7 +3,7 @@
 
 /* universal */
 
-body {
+.body-menu {
   padding-top: 60px;
 }
 
@@ -66,4 +66,51 @@ p {
 #logo:hover {
   color: #fff;
   text-decoration: none;
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+/* Card */
+
+.card-back {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.card-title{
+  margin-bottom:10px !important;
+  text-transform: capitalize;
+}
+.card-subtitle{
+  margin-top: 5px !important;
+  margin-bottom: 10 !important;
+  text-transform: capitalize;
+}
+.answer{
+  font-size:15px;
+  text-align: center;
 }

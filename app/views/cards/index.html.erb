@@ -1,0 +1,33 @@
+<% provide(:title, 'All Cards') %>
+
+<div class="container">
+	<h1>All Cards</h1>
+	<% @cards.each do |card| %>
+		<table class="table table-striped table-bordered">
+		    <thead>
+		   	    <tr> 
+		   		    <th>#</th>
+		   		    <th>Front</th>
+		   		    <th>Back</th>
+		   		    <th>Deck</th>
+		   		    <th>tag</th>
+		   		    <th>edit</th>
+		   	    </tr> 
+			</thead>
+			<tbody> 
+		       	<tr> 
+		   	    	<th scope="row"><%= card.id %></th> 
+		   	    	<td><%= link_to card.front, card %></td> 
+		   	    	<td><%= card.back %></td> 
+		   	    	<td><%= card.deck.name %></td>
+		   	    	<td><%= card.tag.name %></td>  
+		   	    	<td><%= link_to "delete", card, method: :delete, 
+		   	    			data: { confirm: "Are you sure?"}%></td>
+		   	   	 </tr> 
+			</tbody>
+		</table>
+	<% end %>
+</div>
+
+
+

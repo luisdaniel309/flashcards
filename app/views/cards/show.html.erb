@@ -1,0 +1,29 @@
+<div class="container">
+	<div class="row">
+		<h1 class="card-title"><%= @card.front %></h1>
+		<h2 class="card-subtitle"><%= @card.deck.name %> Deck</h2>
+		<hr>
+		<div class="collapse answer" id="collapseExample">
+		  <div class="well">
+		  <%= @card.back %>
+		  </div>
+		</div>
+		
+		
+		<a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+		 Show Answer
+		</a>
+		<%  if @card.previous %>
+		  <%= link_to "< Previous", @card.previous,  class: "btn btn-default" %>
+		<% end %>
+		 <% if @card.next %>
+		    <%= link_to "Next >", @card.next, class: "btn btn-default" %>
+		<% end %>
+	</div>
+</div>
+
+
+
+
+
+

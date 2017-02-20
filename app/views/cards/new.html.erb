@@ -1,0 +1,21 @@
+<% provide(:title, 'Add new card') %>
+<h1>Add new card</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@card) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+      <%= f.label :front %>
+      <%= f.text_field :front, class: 'form-control' %>
+
+      <%= f.label :back %>
+      <%= f.text_field :back , class: 'form-control'%>
+
+      <%= f.label :deck %>
+     
+     <%= f.collection_select :deck_id, Deck.all, :id, :name, :prompt => "Select a Deck" %>
+
+      <%= f.submit "Add New Card", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

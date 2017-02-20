@@ -9,8 +9,15 @@
  	<%= render 'layouts/shim' %>
  </head>
 
-  <body>
-  	<%= render 'layouts/header' %>
+  <body class="<%= 'body-menu' unless current_page?(root_path) %>">
+  	
+  <% unless current_page?(root_path)%>
+       <%= render 'layouts/header' %>
+  <% end %>
+   
+  	 <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
     <%= yield %>
   </body>
 </html>
