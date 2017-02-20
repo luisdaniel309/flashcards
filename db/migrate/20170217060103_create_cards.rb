@@ -7,6 +7,5 @@ class CreateCards < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
-    add_index :cards, [:deck_id]
   end
 end
